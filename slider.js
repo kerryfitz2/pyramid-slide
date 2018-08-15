@@ -8,7 +8,7 @@ var slider = new Vue({
     },
     computed: {
         rows: function() {
-            return pyramidDynamic(this.height, this.brick);
+            return dynamicPyramid(this.height, this.brick);
         },
     },
     methods: {
@@ -21,7 +21,7 @@ var slider = new Vue({
 
 
 
-function pyramidDynamic(height, brick) {
+function dynamicPyramid(height, brick) {
 
     var rowStrings = [];
     for (var row = 0; row < height; row++) {
