@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pyramid Slide</title>
+  <style>
+        h1 {
+            background-color: purple;
+            color: grey;
+            padding: 30px;
+        }
+        
+        #pyramid {
+            line-height: 0;
+            font-size: 30px;
+            color: purple;
+        }
+
+        #box {
+            border: 3px solid purple;
+            background-color: lightgray;
+        }
+
+        #header {
+            background-color: grey;
+            padding: 20px;
+        }
+
+        body {
+            font-family: "Courier New", monospace;
+            text-align: center;
+        }
+        main{
+            max-width: 50rem;
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+        <main>
+            <h1><strong>Pyramid Slide</strong></h1>
+            <div id = "box">
+                <div id = "header"> Brick Symbol
+                        <select id = "brick" v-on:change="dynamicRows">
+                            <option value = "#">#</option>
+                            <option value = "@">@</option>
+                            <option value = "X">X</option>
+                            <option value = "$">$</option>
+                        </select>  
+                    <label>
+                        How high?
+                        <input type = "range" id = "heights" min = "0" max = "20" class = "slider" value = '0' v-on:input="dynamicRows"/>
+                        <b>{{height}}</b>
+                    </label>
+                </div>
+    
+                <div id="pyramid">
+                    <p v-for="row in rows" v-html="row" />
+                </div>
+            </div>
+        </main>
+
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script src="slider.js"></script>
+    </body>
+</html>
+
+
+
